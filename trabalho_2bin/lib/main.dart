@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'theme/app_theme.dart';
-import 'router/app_router.dart';
+import 'routes.dart';
+import 'themes.dart';
 
 void main() {
-  runApp(const TaskApp());
+  runApp(ComparaApp());
 }
 
-class TaskApp extends StatelessWidget {
-  const TaskApp({super.key});
-
+class ComparaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'TaskApp',
-      theme: AppTheme.lightTheme,
-      routerConfig: AppRouter.router,
+      title: 'ComparaItajubá',
+      theme: AppTheme,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
